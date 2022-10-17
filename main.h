@@ -12,7 +12,7 @@ typedef struct prints
 } prints_t;
 
 /*Main functions*/
-int checker(const char *format, prints_t f_list[], va_list arg_list);
+int checker(const char *format, prints_t func_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int _putchar(char);
 int print_percent(va_list);
