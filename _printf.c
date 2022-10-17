@@ -5,7 +5,7 @@ int printchar;
 prints_t func_list[] = {
 		     {"c", print_char},
 		     {"s", print_string},
-		     {"%", Print_percent},
+		     {"%", print_percent},
 		     {NULL, NULL},
 };
 va_list arg_list;

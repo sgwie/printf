@@ -6,7 +6,7 @@ int print_char(va_list list)
   return (1);
 }
 
-int print_percent(__attributr__((unused))va_list list)
+int print_percent(__attribute__((unused))va_list list)
 {
   _putchar('%');
   return (1);

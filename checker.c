@@ -1,6 +1,6 @@
 #include "main.h"
 
-int checker(const char *format, conver_t func_list[], va_list arg_list)
+int checker(const char *format, prints_t func_list[], va_list arg_list)
 {
   int i, j, find, printchar;
 
@@ -10,18 +10,18 @@ int checker(const char *format, conver_t func_list[], va_list arg_list)
       if (format[i] == '%') /*Checks for format specifiers*/
 	{
 	  /*Iterates through struct to find the right func*/
-	  for (j = 0; func_list[j].sym != NULL; j++)
+	  for (j = 0; func_list[j].symbol != NULL; j++)
 	    {
-	      if (format[i + 1] == func_list[j].sym[0])
+	      if (format[i + 1] == func_list[j].symbol[0])
 		{
-		  find = func_list[j].f(arg_list);
+		  find = func_list[j].func(arg_list);
 		  if (find == -1)
 		    return (-1);
 		  printchar += find;
 		  break;
 		}
 	    }
-	  if (func_list[j].sym == NULL && format[i + 1] != ' ')
+	  if (func_list[j].symbol == NULL && format[i + 1] != ' ')
 	    {
 	      if (format[i + 1] != '\0')
 		{
@@ -32,7 +32,7 @@ int checker(const char *format, conver_t func_list[], va_list arg_list)
 	      else
 		return (-1);
 	    }
-	  i = i + 1; /*Updating i to skip format symbols*/
+	  i = i + 1; /*Updating i to skip format symbolbols*/
 	}
       else
 	{
