@@ -5,21 +5,37 @@
  *
  *@n: number to be printed
  *
- *Return:void
+ *Return: Integer number
  */
 
 int print_number(va_list args)
 {
   int n;
-  unsigned int a;
-  n = va_arg(args, int);
-if (n < 0)
-{
-_putchar(45);
-a = -n;
-}
-if (a / 10)
-print_number(a / 10);
-_putchar((a % 10) + '0');
- return (a);
+  int divisor;
+  int length;
+  unsigned int number;
+
+  n  = va_arg(args, int);
+  divisor = 1;
+  length = 0;
+
+  if (n < 0)
+    {
+      length += _putchar('-');
+      number = n * -1;
+    }
+  else
+    number = n;
+
+  for (; number / divisor > 9; )
+    divisor *= 10;
+
+  for (; divisor != 0; )
+    {
+      length += _putchar('0' + number / divisor);
+      number %= divisor;
+      divisor /= 10;
+    }
+
+  return (length);
 }
