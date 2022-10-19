@@ -1,4 +1,4 @@
-0;10;1c0;10;1c#ifndef PRINT_F
+#ifndef PRINT_F
 #define PRINT_F
 
 #include<unistd.h>

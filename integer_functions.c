@@ -52,7 +52,7 @@ int print_unsigned_number(unsigned int n)
 	int length = 0;
 	unsigned int number = n;
 
-	for (; number / divisor > 9)
+	for (; number / divisor > 9; )
 		divisor *= 10;
 	for (; divisor != 0;)
 	{
