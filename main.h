@@ -1,4 +1,4 @@
-#ifndef PRINT_F
+0;10;1c0;10;1c#ifndef PRINT_F
 #define PRINT_F
 
 #include<unistd.h>
@@ -15,7 +15,7 @@ typedef struct prints
 {
 	char *symbol;
 	int(*func)(va_list);
-} prints prints_t;
+} prints_t;
 
 /*Main functions*/
 int checker(const char *format, prints_t func_list[], va_list arg_list);
