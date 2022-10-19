@@ -5,10 +5,16 @@
 #include<stdarg.h>
 #include<stdlib.h>
 
+/**
+ * struct prints - struct for main things
+ * @symbol: member 1
+ * @func: member 2
+ */
+
 typedef struct prints
 {
-  char *symbol;
-  int(*func)(va_list);
+	char *symbol;
+	int(*func)(va_list);
 } prints_t;
 
 /*Main functions*/
@@ -21,5 +27,6 @@ int print_integer(va_list);
 int print_string(va_list);
 int print_unsigned_integer(va_list);
 int print_number(va_list);
+int print_unsigned_number(unsigned int n);
 
 #endif
